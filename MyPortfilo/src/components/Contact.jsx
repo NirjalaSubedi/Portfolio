@@ -11,7 +11,7 @@ export default function Contact() {
     message: '',
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState(null) // 'success' | 'error' | null
+  const [submitStatus, setSubmitStatus] = useState(null) 
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -22,7 +22,6 @@ export default function Contact() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate standard form submit
     setTimeout(() => {
       setIsSubmitting(false)
       setSubmitStatus('success')
@@ -101,7 +100,7 @@ export default function Contact() {
                   <div>
                     <span className="text-[10px] text-slate-500 uppercase tracking-widest font-mono block">Email Me</span>
                     <a href="mailto:contact@example.com" className="text-sm font-semibold text-slate-200 hover:text-purple-450 transition-colors">
-                      contact@example.com
+                      nirjalasubedi944@example.com
                     </a>
                   </div>
                 </div>
@@ -113,7 +112,7 @@ export default function Contact() {
                   <div>
                     <span className="text-[10px] text-slate-500 uppercase tracking-widest font-mono block">Call Me</span>
                     <a href="tel:+9779800000000" className="text-sm font-semibold text-slate-200 hover:text-indigo-450 transition-colors">
-                      +977 9800000000
+                      +977 9761043006
                     </a>
                   </div>
                 </div>
@@ -125,7 +124,7 @@ export default function Contact() {
                   <div>
                     <span className="text-[10px] text-slate-500 uppercase tracking-widest font-mono block">Location</span>
                     <span className="text-sm font-semibold text-slate-200">
-                      Kathmandu, Nepal
+                      Itahari, Nepal
                     </span>
                   </div>
                 </div>
@@ -139,7 +138,7 @@ export default function Contact() {
               </h4>
               <div className="flex items-center gap-4">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/NirjalaSubedi"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl border border-slate-800 bg-slate-900/50 hover:bg-purple-950/25 hover:border-purple-500/40 text-slate-300 hover:text-white transition-all duration-300"
@@ -148,7 +147,7 @@ export default function Contact() {
                   <span className="text-xs font-semibold">GitHub</span>
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/nirjala-subedi-a53260305/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl border border-slate-800 bg-slate-900/50 hover:bg-indigo-950/25 hover:border-indigo-500/40 text-slate-300 hover:text-white transition-all duration-300"
@@ -203,7 +202,7 @@ export default function Contact() {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="John Doe"
+                      placeholder="Your Name"
                       className="w-full px-4 py-3 rounded-xl bg-slate-900/50 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-purple-500/80 focus:ring-2 focus:ring-purple-500/10 transition-all duration-300 text-sm"
                     />
                   </div>
@@ -219,7 +218,7 @@ export default function Contact() {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="john@example.com"
+                      placeholder="youremail@example.com"
                       className="w-full px-4 py-3 rounded-xl bg-slate-900/50 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-purple-500/80 focus:ring-2 focus:ring-purple-500/10 transition-all duration-300 text-sm"
                     />
                   </div>
