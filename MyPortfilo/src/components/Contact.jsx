@@ -40,15 +40,6 @@ export default function Contact() {
         
         {/* Section Header */}
         <div className="text-center space-y-4">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs font-semibold uppercase tracking-wider"
-          >
-            <Sparkles size={12} className="text-pink-400" />
-            <span>Connection</span>
-          </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
