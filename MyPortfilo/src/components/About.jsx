@@ -1,33 +1,33 @@
 import { motion } from 'framer-motion'
-import { GraduationCap, Code, Trophy, Calendar, Award, ExternalLink } from 'lucide-react'
+import { GraduationCap, Code, Calendar, Award } from 'lucide-react'
 
 const education = [
   {
-    degree: 'Bachelor in Computer Engineering',
-    institution: 'Tribhuvan University, IOE (Pulchowk Campus)',
-    duration: '2022 - Present',
-    description: 'Specializing in software engineering, algorithms, and full-stack system architecture.',
+    degree: 'Bachelor in Computer Application',
+    institution: 'Tribhuvan University, Itahari Namuna College',
+    duration: '2023 - Present',
+    description: 'Specializing in software development, algorithms, and full-stack system architecture.',
   },
   {
-    degree: 'High School (+2 Science)',
-    institution: 'St. Xavier\'s College, Maitighar',
-    duration: '2020 - 2022',
-    description: 'Completed high school with a focus on Physics, Mathematics, and Computer Science.',
+    degree: 'High School (+2 Computer Science)',
+    institution: 'Itahari Namuna College, Sunsari',
+    duration: '2021 - 2022',
+    description: 'Completed high school with a focus on Mathematics, and Computer Science.',
   },
 ]
 
 const skillCategories = [
   {
     title: 'Frontend Development',
-    skills: ['React.js', 'Tailwind CSS', 'Redux Toolkit', 'HTML5/CSS3', 'JavaScript (ES6+)'],
+    skills: ['React.js', 'Tailwind CSS', 'Redux Toolkit', 'HTML5/CSS3', 'JavaScript'],
   },
   {
     title: 'Backend & Database',
-    skills: ['Node.js', 'Express.js', 'MongoDB', 'REST APIs', 'PostgreSQL'],
+    skills: ['Node.js', 'Express.js', 'MongoDB', 'REST APIs', 'MYSQL'],
   },
   {
     title: 'Tools & Workflows',
-    skills: ['Git & GitHub', 'Docker', 'Postman', 'Vite', 'Figma'],
+    skills: ['Git & GitHub', 'Postman', 'Vite', 'Figma'],
   },
 ]
 
@@ -77,10 +77,10 @@ export default function About() {
                 <Code className="text-purple-400" size={20} />
                 My Journey
               </h3>
-              <p className="text-slate-350 text-sm sm:text-base leading-relaxed font-light">
-                Hello! I'm Nirjala, a web developer based in Kathmandu, Nepal. I am highly motivated by the process of taking complex problems and building robust, elegant full-stack solutions.
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
+                Hello! I'm Nirjala, a web developer based in Itahari, Nepal. I am highly motivated by the process of taking complex problems and building robust, elegant full-stack solutions.
               </p>
-              <p className="text-slate-350 text-sm sm:text-base leading-relaxed font-light">
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
                 My coding journey started in college, where I fell in love with turning logical challenges into visual, functional products. Since then, I've committed to mastering modern web tech frameworks like React, Node.js, and MongoDB.
               </p>
             </motion.div>
@@ -115,7 +115,7 @@ export default function About() {
                         {edu.degree}
                       </h4>
                       <p className="text-sm font-medium text-slate-400">{edu.institution}</p>
-                      <p className="text-slate-450 text-xs sm:text-sm font-light leading-relaxed mt-1">
+                      <p className="text-slate-400 text-xs sm:text-sm font-light leading-relaxed mt-1">
                         {edu.description}
                       </p>
                     </div>
@@ -126,7 +126,7 @@ export default function About() {
 
           </div>
 
-          {/* Right Column: Skills & LeetCode (5 Cols) */}
+          {/* Right Column: Skills (5 Cols) */}
           <div className="lg:col-span-5 space-y-10 flex flex-col justify-between">
             
             {/* Skills Card */}
@@ -162,93 +162,7 @@ export default function About() {
                 ))}
               </div>
             </motion.div>
-
-            {/* LeetCode Mock Stats Card */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="p-6 rounded-2xl border border-slate-800/80 bg-slate-950/25 backdrop-blur-md space-y-4 text-left shadow-lg shadow-purple-950/5 relative overflow-hidden"
-            >
-              {/* LeetCode Logo or Brand representation */}
-              <div className="flex items-center justify-between border-b border-slate-800/80 pb-3">
-                <span className="text-sm font-mono text-amber-500 font-bold flex items-center gap-1.5">
-                  <Trophy size={16} />
-                  LeetCode Profile
-                </span>
-                <a
-                  href="https://leetcode.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs font-mono text-slate-450 hover:text-white flex items-center gap-1 transition-colors"
-                >
-                  view live <ExternalLink size={10} />
-                </a>
-              </div>
-
-              {/* Stat Layout */}
-              <div className="flex items-center gap-6 py-2">
-                {/* Visual Ring Chart Mock */}
-                <div className="relative w-20 h-20 flex items-center justify-center">
-                  <svg className="w-full h-full transform -rotate-90">
-                    {/* Gray Track */}
-                    <circle
-                      cx="40"
-                      cy="40"
-                      r="32"
-                      className="stroke-slate-800 stroke-[6px] fill-transparent"
-                    />
-                    {/* Easy Ring */}
-                    <circle
-                      cx="40"
-                      cy="40"
-                      r="32"
-                      strokeDasharray="201"
-                      strokeDashoffset="70"
-                      className="stroke-emerald-500 stroke-[6px] fill-transparent transition-all duration-1000"
-                    />
-                    {/* Medium Ring */}
-                    <circle
-                      cx="40"
-                      cy="40"
-                      r="32"
-                      strokeDasharray="201"
-                      strokeDashoffset="120"
-                      className="stroke-amber-500 stroke-[4px] fill-transparent transition-all duration-1000"
-                    />
-                  </svg>
-                  {/* Inside Text */}
-                  <div className="absolute flex flex-col items-center">
-                    <span className="text-lg font-extrabold text-white font-mono leading-none">250+</span>
-                    <span className="text-[9px] text-slate-500 uppercase tracking-widest font-semibold mt-0.5">Solved</span>
-                  </div>
-                </div>
-
-                {/* Categories Grid */}
-                <div className="flex-1 space-y-2 text-xs font-mono">
-                  <div className="flex items-center justify-between">
-                    <span className="text-emerald-400">Easy</span>
-                    <span className="text-slate-300 font-semibold">120 <span className="text-slate-500 text-[10px]">/ 600</span></span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-amber-400">Medium</span>
-                    <span className="text-slate-300 font-semibold">110 <span className="text-slate-500 text-[10px]">/ 1200</span></span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-red-400">Hard</span>
-                    <span className="text-slate-300 font-semibold">20 <span className="text-slate-500 text-[10px]">/ 600</span></span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Extra badges */}
-              <div className="pt-2 flex items-center justify-between text-[11px] font-mono text-slate-450 border-t border-slate-800/80">
-                <span>Streak: <span className="text-purple-400 font-semibold">45 Days</span></span>
-                <span>Rank: <span className="text-indigo-400 font-semibold">Top 8%</span></span>
-              </div>
-            </motion.div>
-
+            
           </div>
 
         </div>
