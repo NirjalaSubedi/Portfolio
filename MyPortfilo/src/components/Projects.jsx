@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ExternalLink, Briefcase, MapPin, AlertCircle, Sparkles } from 'lucide-react'
+import { ExternalLink, Briefcase, MapPin, AlertCircle, Gamepad2 } from 'lucide-react'
 import { FaGithub } from 'react-icons/fa6'
 
 const projects = [
@@ -12,31 +12,43 @@ const projects = [
     tech: ['React.js', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS'],
     githubLink: 'https://github.com/NirjalaSubedi/JobPortal',
     liveLink: 'https://example.com',
-    accentClass: 'hover:shadow-purple-900/10 group-hover:border-purple-500/50',
+    accentClass: 'from-purple-500/20',
     tagColor: 'bg-purple-500/10 text-purple-300 border-purple-500/20',
   },
   {
     title: 'Najikai',
-    subtitle: 'Geo-Utility Service Finder',
+    subtitle: 'Location-Based Multi-Vendor Marketplace',
     icon: <MapPin className="text-emerald-400" size={24} />,
     description:
-      'A location-intelligent web application mapping local medical clinics, workshops, and critical public utility services. Uses real-time geographic queries for instant nearby support.',
+      'A location-intelligent multi-vendor e-commerce platform mapping local grocery stores and shops. Features seamless buy/sell workflows with real-time geographic filtering for nearby users.',
     tech: ['React.js', 'Leaflet.js', 'Node.js', 'Express', 'MongoDB'],
     githubLink: 'https://github.com/NirjalaSubedi/Najikaii',
     liveLink: 'https://example.com',
-    accentClass: 'hover:shadow-emerald-900/10 group-hover:border-emerald-500/50',
+    accentClass: 'from-emerald-500/20',
     tagColor: 'bg-emerald-500/10 text-emerald-300 border-emerald-500/20',
+  },
+  {
+    title: 'BrainByte',
+    subtitle: 'Interactive Multi-Game Platform',
+    icon: <Gamepad2 className="text-amber-400" size={24} />,
+    description:
+      'A dynamic multi-game web platform developed for a code festival, featuring interactive UI layouts, rich visual elements, and smooth client-side gameplay states.',
+    tech: ['React.js','Node.js', 'Tailwind CSS', 'Framer Motion','MYSQL'],
+    githubLink: 'https://github.com/NirjalaSubedi/BrainByte',
+    liveLink: 'https://example.com',
+    accentClass: 'from-amber-500/20',
+    tagColor: 'bg-amber-500/10 text-amber-300 border-amber-500/20',
   },
   {
     title: 'Nikaas',
     subtitle: 'Social grievance reporting hub',
-    icon: <AlertCircle className="text-rose-450" size={24} />,
+    icon: <AlertCircle className="text-rose-400" size={24} />,
     description:
       'A community-driven grievance platform. Allows citizens to report local civic issues (potholes, garbage, sewage), coordinate solutions, and upvote major requests for municipal visibility.',
     tech: ['HTML', 'CSS', 'PHP', 'MYSQL'],
     githubLink: 'https://github.com/NirjalaSubedi/Goverment-complaint-portal',
     liveLink: 'https://example.com',
-    accentClass: 'hover:shadow-rose-900/10 group-hover:border-rose-500/50',
+    accentClass: 'from-rose-500/20',
     tagColor: 'bg-rose-500/10 text-rose-300 border-rose-500/20',
   },
 ]
@@ -48,15 +60,6 @@ export default function Projects() {
         
         {/* Section Header */}
         <div className="text-center space-y-4">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-semibold uppercase tracking-wider"
-          >
-            <Sparkles size={12} className="text-indigo-400" />
-            <span>Showcase</span>
-          </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -78,7 +81,7 @@ export default function Projects() {
           </motion.p>
         </div>
 
-        {/* Project Grid */}
+        {/* Project Grid - Automatic 3 columns layout for large screens */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((proj, idx) => (
             <motion.div
@@ -90,13 +93,13 @@ export default function Projects() {
               whileHover={{ y: -8 }}
               className="group flex flex-col justify-between p-6 rounded-2xl border border-slate-800/80 bg-slate-950/20 backdrop-blur-md transition-all duration-300 hover:bg-slate-900/20 hover:border-slate-700/80 shadow-2xl relative overflow-hidden"
             >
-              {/* Top Accent Light Glow */}
-              <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-purple-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              {/* Dynamic Top Accent Light Glow on Hover */}
+              <div className={`absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent ${proj.accentClass} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
               
               <div className="space-y-4 text-left">
                 {/* Header Info */}
                 <div className="flex items-center justify-between">
-                  <div className="p-3 rounded-xl bg-slate-900 border border-slate-800/80 group-hover:border-purple-500/30 transition-colors duration-300">
+                  <div className="p-3 rounded-xl bg-slate-900 border border-slate-800/80 group-hover:border-slate-700 transition-colors duration-300">
                     {proj.icon}
                   </div>
                   <div className="flex items-center gap-3">
